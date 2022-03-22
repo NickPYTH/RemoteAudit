@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.logoText {
+    font-size: 48px;
+}
