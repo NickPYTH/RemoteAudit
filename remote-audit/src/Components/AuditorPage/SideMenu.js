@@ -1,20 +1,19 @@
-import {SideMenuList} from "./SideMenuList";
+import { SideMenuList } from "./SideMenuList";
 
 export const SideMenu = ({}) => {
-    return(
+    return (
         <div style={styles.wrapper}>
-            <SideMenuList/>
+            <SideMenuList />
         </div>
-    )
-}
+    );
+};
 
 const styles = {
     wrapper: {
-        display: 'flex',
-        flexDirection: 'column',
+        display: "flex",
+        flexDirection: "column",
         width: 300,
         height: window.innerHeight,
         backgroundColor: "#f3f6f9",
-    }
-}
-
+    },
+};

@@ -1,14 +1,16 @@
-import * as React from 'react';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Avatar from '@mui/material/Avatar';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import * as React from "react";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import ListItemAvatar from "@mui/material/ListItemAvatar";
+import Avatar from "@mui/material/Avatar";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 
 export default function DecorateCardTopLeft() {
     return (
-        <List sx={{ width: '100%', maxWidth: 300, bgcolor: 'background.paper' }}>
+        <List
+            sx={{ width: "100%", maxWidth: 300, bgcolor: "background.paper" }}
+        >
             <ListItem>
                 <ListItemAvatar>
                     <Avatar>
