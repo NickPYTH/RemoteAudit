@@ -47,7 +47,6 @@ function* fetchAuditorCompanyRegisterWorker(info) {
     yield put(setIsAuditorCompanyRegisterLoading(true));
     const data = yield call(fetchAuditorCompanyRegister, info.params);
     const json = yield call(() => new Promise((res) => res(data.json())));
-    console.log(json);
     yield put(setIsAuditorCompanyRegisterLoading(false));
 }
 

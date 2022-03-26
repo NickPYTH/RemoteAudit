@@ -37,7 +37,6 @@ function* fetchCompanyRegisterWorker(info) {
     yield put(setIsCompanyRegisterLoading(true));
     const data = yield call(fetchCompanyRegister, info.params);
     const json = yield call(() => new Promise((res) => res(data.json())));
-    console.log(json);
     yield put(setIsCompanyRegisterLoading(false));
 }
 

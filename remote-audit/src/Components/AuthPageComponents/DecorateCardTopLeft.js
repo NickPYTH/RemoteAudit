@@ -17,7 +17,7 @@ export default function DecorateCardTopLeft() {
                         <CheckCircleOutlineIcon />
                     </Avatar>
                 </ListItemAvatar>
-                <ListItemText primary="Какой" secondary="Февраль 9, 2022" />
+                <ListItemText primary="Принято" secondary="Февраль 9, 2022" />
             </ListItem>
             <ListItem>
                 <ListItemAvatar>
@@ -25,7 +25,7 @@ export default function DecorateCardTopLeft() {
                         <CheckCircleOutlineIcon />
                     </Avatar>
                 </ListItemAvatar>
-                <ListItemText primary="Нибудь" secondary="Февраль 7, 2022" />
+                <ListItemText primary="Исправлено" secondary="Февраль 7, 2022" />
             </ListItem>
             <ListItem>
                 <ListItemAvatar>
@@ -33,7 +33,7 @@ export default function DecorateCardTopLeft() {
                         <CheckCircleOutlineIcon />
                     </Avatar>
                 </ListItemAvatar>
-                <ListItemText primary="Текст" secondary="Февраль 20, 2022" />
+                <ListItemText primary="Приянто" secondary="Февраль 20, 2022" />
             </ListItem>
         </List>
     );

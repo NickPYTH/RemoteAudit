@@ -6,17 +6,19 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
-import CorporateFareIcon from "@mui/icons-material/CorporateFare";
-import GroupsIcon from "@mui/icons-material/Groups";
 import {Link, Redirect} from "react-router-dom";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import {logout} from "../../store/actions/authActions";
 import PersonIcon from '@mui/icons-material/Person';
+import ArticleIcon from '@mui/icons-material/Article';
+import AddBoxIcon from '@mui/icons-material/AddBox';
+import {fetchCreateInvite} from "../../store/actions/companyActions";
 
-const SideMenuListLayout = ({info, logout}) => {
-    //if (info.profileType===null)
-    //    return (<Redirect to="" />)
+const CompanySideMenuListLayout = ({info, company_info, logout, fetchCreateInvite}) => {
+    console.log(company_info)
+    if (info.profileType===null)
+        return (<Redirect to="" />)
     return (
         <Box sx={{ width: "100%", maxWidth: 360, bgcolor: "#f3f6f9" }}>
             <nav aria-label="main mailbox folders">
@@ -27,7 +29,7 @@ const SideMenuListLayout = ({info, logout}) => {
                                 <PersonIcon />
                             </ListItemIcon>
                             <Link
-                                to="auditor-profile"
+                                to="company-profile"
                                 style={{
                                     textDecoration: "none",
                                     width: "100%",
@@ -42,10 +44,10 @@ const SideMenuListLayout = ({info, logout}) => {
                     <ListItem disablePadding>
                         <ListItemButton>
                             <ListItemIcon>
-                                <CorporateFareIcon />
+                                <ArticleIcon />
                             </ListItemIcon>
                             <Link
-                                to="companies"
+                                to="company-documents"
                                 style={{
                                     textDecoration: "none",
                                     width: "100%",
@@ -53,17 +55,17 @@ const SideMenuListLayout = ({info, logout}) => {
                                     color: "inherit",
                                 }}
                             >
-                                <ListItemText primary="Компании" />
+                                <ListItemText primary="Документы" />
                             </Link>
                         </ListItemButton>
                     </ListItem>
                     <ListItem disablePadding>
                         <ListItemButton>
                             <ListItemIcon>
-                                <GroupsIcon />
+                                <AddBoxIcon />
                             </ListItemIcon>
                             <Link
-                                to="staff"
+                                to="company-documents"
                                 style={{
                                     textDecoration: "none",
                                     width: "100%",
@@ -71,7 +73,14 @@ const SideMenuListLayout = ({info, logout}) => {
                                     color: "inherit",
                                 }}
                             >
-                                <ListItemText primary="Сотрудники" />
+                            {
+                                company_info.inviteCode ?
+                                    <ListItemText primary={"Ваш код "+company_info.inviteCode} />
+                                    :
+                                    <ListItemText onClick={()=> {
+                                        fetchCreateInvite()
+                                    }} primary={"Пригласить"} />
+                            }
                             </Link>
                         </ListItemButton>
                     </ListItem>
@@ -103,19 +112,21 @@ const SideMenuListLayout = ({info, logout}) => {
 
 const mapStateToProps = (state) => {
     const info = state.authReducer;
-    return { info };
+    const company_info = state.companyReducer
+    return { info, company_info };
 };
 
 const mapDispatchToProps = (dispatch) =>
     bindActionCreators(
         {
-            logout
+            logout,
+            fetchCreateInvite
         },
         dispatch
     );
 
-export const SideMenuList = connect(
+export const CompanySideMenuList = connect(
     mapStateToProps,
     mapDispatchToProps
-)(SideMenuListLayout);
+)(CompanySideMenuListLayout);
 

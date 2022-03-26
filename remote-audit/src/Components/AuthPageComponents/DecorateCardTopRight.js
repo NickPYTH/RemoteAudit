@@ -15,11 +15,10 @@ export default function DecorativeCard() {
                 </div>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                        Лиза
+                        Отчёт за 2021 год
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        Какой-то умный текст про аудит ко-ко-ко, придумаешь
-                        потом короче строчки на 3 скажем так
+                        Исправить замечания в первом и пятом пункте закупок офисной техники
                     </Typography>
                 </CardContent>
             </CardActionArea>

@@ -6,6 +6,7 @@ import {
     setEmployerProfile,
     setProfileType,
 } from "../../store/actions/authActions";
+import {setCompanyDocuments} from "../../store/actions/companyActions";
 
 const request = () => {
     let myHeaders = new Headers();
@@ -26,10 +27,10 @@ const request = () => {
 function* fetchGetProfileWorker() {
     const data = yield call(request);
     const json = yield call(() => new Promise((res) => res(data.json())));
-    console.log(json);
     if (json.type === "company") {
         yield put(setProfileType("company"));
         yield put(setCompanyProfile(json));
+        yield put(setCompanyDocuments(json.company_documents))
     } else if (json.type === "auditor") {
         yield put(setProfileType("auditor"));
         yield put(setAuditorProfile(json));

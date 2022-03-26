@@ -1,0 +1,27 @@
+.cardOpen {
+    animation-duration: 500ms;
+    animation-name: open;
+}
+
+@keyframes open {
+    0% {
+        height: 300px;
+    }
+    100% {
+        height: 400px;
+    }
+}
+
+.cardClose {
+    animation-duration: 500ms;
+    animation-name: close;
+}
+
+@keyframes close {
+    0% {
+        height: 400px;
+    }
+    100% {
+        height: 300px;
+    }
+}
